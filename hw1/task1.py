@@ -1,4 +1,11 @@
 """
+Created on Thu Jan 16 05:59:17 2025
+
+@author: Jas-20
+
+"""
+
+"""
 CMSC 14200, Winter 2025
 Homework #1, Task #1
 
@@ -23,4 +30,14 @@ def merge_dictionaries(dicts: list[dict[str, int]]) -> dict[str, int]:
 
     Returns: Merged dictionary
     """
-    raise NotImplementedError("todo: merge_dictionaries")
+    merged_dict: dict[str, int] = {} #blank dictionary to store
+    # loop through each dictionary in the list
+    for sub_dict in dicts:
+        for key, value in sub_dict.items():  
+            # Add the value to merged_dict if it doesn't exist
+            if key in merged_dict:                
+                merged_dict[key] += value
+            else:
+                merged_dict[key] =0
+
+    return merged_dict
